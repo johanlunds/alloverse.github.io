@@ -1,3 +1,3 @@
-[submodule ".github/workflows/lib/allonet"]
-	path = .github/workflows/lib/allonet
-	url = https://github.com/alloverse/allonet.git
+[submodule "_generation/libs/allonet"]
+	path = _generation/libs/allonet
+	url = git@github.com:alloverse/allonet
