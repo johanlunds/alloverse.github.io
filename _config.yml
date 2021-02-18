@@ -18,21 +18,25 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Alloverse Docs
+title: "Alloverse Docs"
 email: info@alloverse.com
 description: >- # this means to ignore newlines until "baseurl:"
   Alloverse documentation website!
   Examples! Snippets! API reference! Peanuts!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "alloverse.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alloverse
 github_username: alloverse
 markdown: kramdown
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+#theme: minima
+theme: just-the-docs
+
+remote_theme: pmarsceill/just-the-docs
+#plugins:
+#  - jekyll-feed
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
