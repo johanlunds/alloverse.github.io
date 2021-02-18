@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AlloDocs
+title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
 ---
 # function modules(f)
 # 	local last = ldoc.modules[#ldoc.modules]
