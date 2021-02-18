@@ -14,7 +14,9 @@ jobs:
       - uses: actions/checkout@v2
       - run: git submodule update --init
       - run: git submodule foreach sh -c "git checkout `git remote show origin | awk '/HEAD branch/ {print $NF}'|rev|cut -d' ' -f1|rev` && git pull"
-      - run: scripts/build-docs.sh
+      # - run: scripts/build-docs.sh
+      - run: apt-get install -y luarocks
+      - run: luarocks install ldoc
       - uses: helaili/jekyll-action@2.0.5
         env:
           JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
