@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - run: git submodule init
+      - run: git submodule update --init
       - run: git submodule foreach sh -c "git checkout `git remote show origin | awk '/HEAD branch/ {print $NF}'|rev|cut -d' ' -f1|rev` && git pull"
       - run: scripts/build-docs.sh
       - uses: helaili/jekyll-action@2.0.5

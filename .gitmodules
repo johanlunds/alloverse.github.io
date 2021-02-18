@@ -1,0 +1,3 @@
+[submodule ".github/workflows/lib/allonet"]
+	path = .github/workflows/lib/allonet
+	url = git@github.com:alloverse/allonet
