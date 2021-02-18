@@ -17,7 +17,7 @@ jobs:
       # - run: scripts/build-docs.sh
       - run: sudo apt-get install -y luarocks
       - run: sudo luarocks install ldoc
-      - run: ldoc -l _generation -x .md -f markdown _generation/lib
+      - run: ldoc -l _generation -x .md -f markdown _generation/libs
       - uses: helaili/jekyll-action@2.0.5
         env:
           JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
