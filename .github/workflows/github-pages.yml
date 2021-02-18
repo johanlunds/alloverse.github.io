@@ -1,0 +1,20 @@
+name: Build documentation from sources, and then deploy Jekyll to GH pages
+
+on:
+  push:
+    branches:
+      - main
+      - generation
+      
+      
+jobs: 
+  github-pages:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - run: git submodule init
+      - run: git submodule foreach sh -c "git checkout `git remote show origin | awk '/HEAD branch/ {print $NF}'|rev|cut -d' ' -f1|rev` && git pull"
+      - run: scripts/build-docs.sh
+      - uses: helaili/jekyll-action@2.0.5
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
