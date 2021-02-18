@@ -1,6 +1,6 @@
 lsi: false
 safe: true
-source: alloverse.github.io
+source: .
 incremental: false
 highlighter: rouge
 gist:
