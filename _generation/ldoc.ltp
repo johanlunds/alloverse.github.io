@@ -1,0 +1,188 @@
+# function modules(f)
+# 	local last = ldoc.modules[#ldoc.modules]
+# 	for _,v in ldoc.ipairs(ldoc.modules) do
+# 		f(v, v == last)
+# 	end
+# end
+# local function M(txt,item) return ldoc.markup(txt,item,ldoc.plain) end
+# local self = ldoc
+# local iter = ldoc.modules.iter
+# local pairs = ldoc.pairs
+# local ipairs = ldoc.ipairs
+# function rep(s, n) return n > 0 and s .. rep(s, n-1) or "" end
+# function link(module) return "["..self.display_name(module).."]("..ldoc.ref_to_module(module)..")" end
+#
+#function dir(x)
+# if not x then return "nil" end
+#	for a,b in self.pairs(x) do
+		$(a) - $(b)
+#	end
+#end
+#
+#function map(t, f, pair)
+# pair = pair or ldoc.ipairs
+#  local r = {}
+#  for k,v in pair(t) do
+#    r[k] = f(k, v)
+#  end
+#  return r
+#end
+#
+#function mdtable(keys, rows, maxfill)
+# maxfill = maxfill or 15
+#  local sizes = map(keys, function(i,key)
+#    local len = #key
+#    for _, row in ipairs(rows) do
+#      if #row[i] > len then 
+#        len = #row[i] > maxfill and maxfill or #row[i]
+#      end
+#    end
+#    return len
+#  end)
+#  local r = "| "
+#  local d = "| "
+#  for k,v in ipairs(keys) do
+#    r = r..v
+#    if sizes[k] > #v then 
+#      r = r..rep(" ", sizes[k] - #v)
+#    end
+#    r = r.." | "
+#    d = d..rep("-", sizes[k]).." | "
+#  end
+#  r = r.."\n"..d.."\n"
+#  
+#  r = r.."| "
+#  for _,row in ipairs(rows) do
+#    for i,key in ipairs(keys) do
+#      local item = row[i]
+#      r = r..item
+#      if sizes[i] > #item then 
+#        r = r..rep(" ", sizes[i] - #item)
+#      end
+#      r = r.." | "
+#    end
+#  end
+#  return r.."\n"
+#end
+#
+#function module(m)
+#-- title
+#local title = self.display_name(m)
+$(title)
+$(rep("=", #title))
+#-- summary
+*$(m.summary)*
+#-- description
+$(m.description)
+#
+#if m.kinds.Classes then 
+$("## Classes")
+#  for c in m.kinds.Classes() do
+#    class(c)
+#  end
+#end
+#
+#if m.kinds.Methods then
+
+$("## Methods")
+
+#  for c in m.kinds.Methods() do
+#    method(c)
+#  end
+#end
+#
+#if m.kinds.Tables then 
+
+$("## Tables")
+
+#  for c in m.kinds.Tables() do
+#    table(c)
+#  end
+#end
+#
+#end
+#
+#function class(c)
+-- title
+#local title = self.display_name(c)
+$("### "..title)
+#-- summary
+*$(f.summary)*
+#-- description
+$(f.description)
+#-- supers
+#-- class methods
+#-- instance methods
+#end
+#
+#function method(f)
+#
+#-- signature
+$("### "..self.display_name(f))
+#
+#-- summary
+*$(f.summary)*
+#-- description
+$(f.description)
+#-- parameters
+
+$("#### Arguments")
+
+#if f.params and #f.params > 0 then 
+#  local parameters = mdtable({"Name", "Type", "Description"}, map(f.params, function(i, param)
+#    return { param, f.modifiers.param[param].type, f.params.map[param] }
+#  end))
+$(parameters)
+#else
+*None*
+#end -- if params
+
+$("#### Returns")
+
+#if f.modifiers and f.modifiers["return"] and #f.modifiers["return"] > 0 then
+#  dir(f.modifiers)
+
+$(mdtable({""}, map(f.modifiers["return"], function(k,v) return "?" end)))
+
+#else
+*Nothing*
+#end
+
+--- 
+
+#end -- method
+
+
+#function table(t)
+#  -- title
+$("### "..self.display_name(t))
+# -- summary
+*$(t.summary)*
+# -- description
+$(t.description)
+
+-- mods
+#if t.modifiers.Functions then 
+#for g in t.modifiers.Functions() do
+  functions
+  $(g)
+#end
+#end
+
+#end
+
+
+#if self.module then --- PER MODULE
+  
+#  module(self.module)
+  
+#end -- module
+
+
+#if not self.module then  ---- INDEX PAGE
+
+  #for _, m in ipairs(self.modules or {}) do
+  #module(m)
+  #end  
+  
+#end -- index page
