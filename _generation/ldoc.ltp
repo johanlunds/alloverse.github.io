@@ -184,9 +184,41 @@ $(t.description)
 
 
 #if not self.module then  ---- INDEX PAGE
+#dir(m)
+#  function module(m)
+#
+$("- "..link(m))
+#
+#    if m.kinds.Classes then 
+#
+$("## Classes")
+#
+#      for class in m.kinds.Classes() do
+$("- "..self.display_name(class))
+#      end
+#    end
+#
+#    if m.kinds.Methods then
+#
+$("## Methods")
+#
+#      for method in m.kinds.Methods() do
+$("- "..self.display_name(method))
+#      end
+#    end
+#
+#    if m.kinds.Tables then 
+#
+$("## Tables")
+#      for table in m.kinds.Tables() do
+$("- "..self.display_name(table))
+#      end
+#    end
+#
+#  end
 
-  #for _, m in ipairs(self.modules or {}) do
-  #module(m)
-  #end  
+# for _, m in ipairs(self.modules or {}) do
+#  module(m)
+# end  
   
 #end -- index page
