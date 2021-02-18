@@ -55,8 +55,8 @@ title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
 #  end
 #  r = r.."\n"..d.."\n"
 #  
-#  r = r.."| "
 #  for _,row in ipairs(rows) do
+#    r = r.."| "
 #    for i,key in ipairs(keys) do
 #      local item = row[i]
 #      r = r..item
@@ -65,8 +65,9 @@ title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
 #      end
 #      r = r.." | "
 #    end
+#     r = r.."\n"
 #  end
-#  return r.."\n"
+#  return r
 #end
 #
 #function module(m)
@@ -134,7 +135,12 @@ $("#### Arguments")
 
 #if f.params and #f.params > 0 then 
 #  local parameters = mdtable({"Name", "Type", "Description"}, map(f.params, function(i, param)
-#    return { param, f.modifiers.param[param].type, f.params.map[param] }
+#
+#       return { 
+#          param, 
+#          f.modifiers and f.modifiers.param and f.modifiers.param[param] and f.modifiers.param[param].type or "???", 
+#          f.params and f.params.map and f.params.map[param] or "-" 
+#        }
 #  end))
 $(parameters)
 #else
