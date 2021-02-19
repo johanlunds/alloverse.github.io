@@ -35,10 +35,12 @@ title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
 #function mdtable(keys, rows, maxfill)
 # maxfill = maxfill or 15
 #  local sizes = map(keys, function(i,key)
+#    key = key or ""
 #    local len = #key
 #    for _, row in ipairs(rows) do
-#      if #row[i] > len then 
-#        len = #row[i] > maxfill and maxfill or #row[i]
+#      local value = row[i] or "???"
+#      if #value > len then 
+#        len = #value > maxfill and maxfill or #value
 #      end
 #    end
 #    return len
@@ -46,6 +48,7 @@ title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
 #  local r = "| "
 #  local d = "| "
 #  for k,v in ipairs(keys) do
+#    v = v or "???"
 #    r = r..v
 #    if sizes[k] > #v then 
 #      r = r..rep(" ", sizes[k] - #v)
@@ -58,7 +61,7 @@ title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
 #  for _,row in ipairs(rows) do
 #    r = r.."| "
 #    for i,key in ipairs(keys) do
-#      local item = row[i]
+#      local item = row[i] or "???"
 #      r = r..item
 #      if sizes[i] > #item then 
 #        r = r..rep(" ", sizes[i] - #item)
@@ -135,9 +138,8 @@ $("#### Arguments")
 
 #if f.params and #f.params > 0 then 
 #  local parameters = mdtable({"Name", "Type", "Description"}, map(f.params, function(i, param)
-#
 #       return { 
-#          param, 
+#          param or "???", 
 #          f.modifiers and f.modifiers.param and f.modifiers.param[param] and f.modifiers.param[param].type or "???", 
 #          f.params and f.params.map and f.params.map[param] or "-" 
 #        }
@@ -150,9 +152,12 @@ $(parameters)
 $("#### Returns")
 
 #if f.modifiers and f.modifiers["return"] and #f.modifiers["return"] > 0 then
-#  dir(f.modifiers)
-
-$(mdtable({""}, map(f.modifiers["return"], function(k,v) return "?" end)))
+# local returns = mdtable({"Description"}, map(f.retgroups, function(k,v) 
+#  return map(v, function(k,v)
+#    return v.text or "???"
+#    end)
+# end))
+$(returns)
 
 #else
 *Nothing*
