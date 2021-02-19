@@ -1,6 +1,8 @@
 [submodule "_generation/libs/allonet"]
 	path = _generation/libs/allonet
 	url = https://github.com/alloverse/allonet.git
+	branch = main
 [submodule "_generation/libs/alloui"]
 	path = _generation/libs/alloui
 	url = https://github.com/alloverse/alloui-lua.git
+	branch = master
