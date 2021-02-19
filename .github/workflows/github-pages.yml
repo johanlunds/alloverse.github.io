@@ -1,6 +1,7 @@
 name: Alloverse Documentation Site Deployment
 
 on:
+  schedule: '0 4 * * *'
   push:
     branches:
       - main
