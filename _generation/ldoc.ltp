@@ -1,6 +1,10 @@
 ---
 layout: default
 title: $(ldoc.module and ldoc.display_name(ldoc.module) or "Index")
+# if ldoc.module then 
+# local name = {classes = "Classes", modules = "Modules"}
+parent: $(name[ldoc.module.kind] or "Other")
+# end
 ---
 # function modules(f)
 # 	local last = ldoc.modules[#ldoc.modules]
