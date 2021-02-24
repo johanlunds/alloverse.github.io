@@ -2,7 +2,7 @@ name: Alloverse Documentation Site Deployment
 
 on:
   schedule: 
-    - cron: '0 4 * * *'
+    - cron: '0 6 * * 1'
   push:
     branches:
       - main
