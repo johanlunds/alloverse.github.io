@@ -13,3 +13,10 @@ $sidebar-color: $allo-light-yellow;
 
 $link-color: $blue-200;
 $nav-child-link-color: $blue-200;
+
+/* Hack to change the selection color which isn't immediately available */
+
+*::selection {
+  background-color: $allo-light-green !important;
+  color: $grey-dk-200 !important;
+}
