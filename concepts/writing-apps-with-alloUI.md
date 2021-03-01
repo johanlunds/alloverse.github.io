@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Examples
-permalink: /examples.html
-nav_order: 2
+title: Writing apps with AlloUI
+permalink: /concepts/writing-apps-with-alloUI.html
+parent: Concepts
 ---
 
 # {{ page.title }}
