@@ -26,7 +26,7 @@ The world representation is stored as a big JSON document like so:
 }
 ```
 
-- `entities`: A dictionary from entity ID to [entity description](https://github.com/alloverse/docs/tree/master/specifications#entity).
+- `entities`: A dictionary from entity ID to [entity description](/protocol-reference/#entity).
 - `revision`: An integer ID for this specific revision of the world. Monotonically
   increases until it reaches the biggest sequential integer that a 64-bit IEEE
   double can represent, which is 2^53, whereafter it will wrap around back to 0.
@@ -36,7 +36,7 @@ The world representation is stored as a big JSON document like so:
 
 Sending this document in its entirety every server heart-beat would be needlessly wasteful,
 so instead only the difference to a previous known-good state is sent. An agent acknowledges
-successful receival of world state by setting `ack_state_rev` in [`intent`](intent.md) to
+successful receival of world state by setting `ack_state_rev` in [`intent`](intent) to
 the received world state, whereafter the server will diff against that revision instead.
 Note that it takes time for this ACK to be received, so you might continue to receive
 diffs against an older version; so you need to keep a history of previous states to apply

@@ -47,7 +47,7 @@ Format of the packet on-wire today:
 }
 ```
 
-For the format of the matrix in `poses.*.matrix`, [see coordinate-system.md](coordinate-system.md).
+For the format of the matrix in `poses.*.matrix`, [see coordinate-system.md](coordinate-system).
 
 For `hand*.skeleton`: It's an array of matrices, each describing the pose of a node of the hand.
 There are 26 nodes, with each index as defined by OpenXR hand tracking. You can see a list of

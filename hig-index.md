@@ -3,7 +3,6 @@ layout: default
 title: Human Interface Guidelines
 permalink: /hig
 nav_order: 4
-has_children: true
 ---
 
 # {{ page.title }}

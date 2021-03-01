@@ -7,7 +7,7 @@ parent: Protocol Reference
 
 # {{ page.title }}
 
-For an overview of what a component is, please see [specifications](README.md).
+For an overview of what a component is, please see [Terminology](/protocol-reference).
 
 These interactions are defined by alloserv. Third party developers may
 create any components they want. They can vote to make their own
@@ -17,7 +17,7 @@ components official by opening an issue on this repo.
 
 Defines the physical location and orientation of the entity relative to its parent
 entity if it has one; otherwise relative to the world origo.
-[See coordinate-system.md](coordinate-system.md) for an extended description of how
+See [Coordinate System](coordinate-system) for an extended description of how
 things are positioned and oriented in Alloverse.
 
 ```
@@ -151,7 +151,7 @@ Describes how an entity maybe grabbed/held, and then
 moved/dragged by a user.
 
 The actual grabbing is accomplished using intents.
-See the field `grab` under [intent](intent.md).
+See the field `grab` under [intent](intent).
 
 ```
 "grabbable": {
@@ -188,7 +188,7 @@ from the location of that entity.
 Please do not try to create live-media components manually. They must be
 allocated server-side so that the server can allocate a track stream in
 the network protocol. Instead, send
-[allocate_track](https://github.com/alloverse/docs/blob/master/specifications/interactions.md#entity_wishes_to_transmit_live_media)
+[allocate_track](interactions#entity-wishes-to-transmit-live-media)
 to `place` to add a `live-media` component to your entity.
 
 - `track_id`: `CHANNEL_MEDIA` track number that corresponds to what this

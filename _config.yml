@@ -65,8 +65,9 @@ search:
   button: false
 
 # Build settings
-#theme: minima
 theme: just-the-docs
+
+color_scheme: alloverse
 
 remote_theme: pmarsceill/just-the-docs
 #plugins:

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Coordinate Systems
-permalink: /protocol-reference/coordinate-systems
+title: Coordinate System
+permalink: /protocol-reference/coordinate-system
 parent: Protocol Reference
 ---
 

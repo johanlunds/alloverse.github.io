@@ -13,7 +13,7 @@ What are the actual bytes travelling on the wire? They all seem to be json paylo
 
 - Channel: 0 ("CHANNEL_STATEDIFFS")
 - Kind: Unreliable
-- Payload specification: [state.md](state.md)
+- Payload specification: [State](state-diffs)
 
 ```
 <<JSON-payload>>\n
@@ -23,7 +23,7 @@ What are the actual bytes travelling on the wire? They all seem to be json paylo
 
 - Channel: 0 ("CHANNEL_STATEDIFFS")
 - Kind: Unreliable
-- Payload specification: [intent.md](intent.md)
+- Payload specification: [Intent](intent)
 
 ```
 <<JSON-payload>>\n
@@ -33,7 +33,7 @@ What are the actual bytes travelling on the wire? They all seem to be json paylo
 
 - Channel: 1 ("CHANNEL_COMMANDS")
 - Kind: Reliable
-- Payload specification: [specifications.md](https://github.com/alloverse/docs/blob/master/specifications/README.md#entity-to-entity-interaction-requestresponsepubsub)
+- Payload specification: [Entity to entity interaction](/protocol-reference/#entity-to-entity-interaction-requestresponsepubsub)
 
 ```
 <<JSON-payload>>\n
@@ -56,7 +56,7 @@ Version 0 implements this packet as:
 
 - Channel: 1 ("CHANNEL_COMMANDS")
 - Kind: Reliable
-- Payload specification: [specifications.md](https://github.com/alloverse/docs/blob/master/specifications/README.md#entity-to-entity-interaction-requestresponsepubsub)
+- Payload specification: [Entity to entity interaction](/protocol-reference/#entity-to-entity-interaction-requestresponsepubsub)
 
 ```
 <<JSON-payload>>\n
@@ -66,7 +66,7 @@ Version 0 implements this packet as:
 
 - Channel: 3 ("CHANNEL_MEDIA")
 - Kind: Unreliable
-- Related interaction: [allocate_track](https://github.com/alloverse/docs/blob/master/specifications/interactions.md#entity_wishes_to_transmit_live_media)
+- Related interaction: [allocate_track](/protocol-reference/interactions#entity-wishes-to-transmit-live-media)
 
 ```
 <<track-id as 32bit big endian integer>><<raw media payload>>\n
