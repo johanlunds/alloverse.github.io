@@ -7,6 +7,6 @@ parent: Concepts
 
 # {{ page.title }}
 
-## Some examples may go here
+## This page is a stub
 
-Nothing to show as of yet, though.
+TBD

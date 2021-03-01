@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Assets
-permalink: /concepts/assets.html
+permalink: /concepts/assets
 parent: Examples
 ---
 
 # {{ page.title }}
 
-## Some examples may go here
+## This page is a stub
 
-Nothing to show as of yet, though.
+TBD
