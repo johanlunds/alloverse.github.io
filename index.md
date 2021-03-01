@@ -10,6 +10,17 @@ nav_order: 1
 
 # {{ page.title }}
 
+Alloverse is an open platform for collaborative workspaces in 3D. It’s Gibson style Cyberspace, but for your day-to-day work and play, with your friends and colleagues. It’s a VR and AR platform for creating spaces, and for running real applications within those spaces, together with other people.
+
+Please see the public website for more information.
+
+In nerd terms, it's a VR/AR/3D "window manager" and collaborative workspace.
+
+Your "place" is where you decorate, run apps, invite people, and hang out. It's like a collaborative X11 server: It runs a world simulation server, a voip gateway, and all the backing data for 3d UIs for the running apps. The reference Elixir implementation is in alloplace.
+A "visor" is the GUI application you use to visit places and interact with your apps. allovisor implements such a visor for VR in Unity.
+An "appliance" is a process running on your computer, or on a computer on the Internet. Like opening a web page (or launching a remote X11 process), this app can then show its interface and be interacted with inside your place.
+The network and "UI protocol" is abstracted into the allonet library, written in C and used by all the above projects.
+
 ### Developing an Alloverse App
 
 An Alloverse app is a server-side app that you run on your own server, similarly to how you would host a web app on your own server. The difference is, when a user goes to your app on the web, it loads into that user’s web browser on their computer; but when a user goes to your alloapp in an Alloverse Place, the app loads into the Place for all users in that Place to use, and your code gets collaboration and VR super-powers for free.
