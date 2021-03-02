@@ -7,6 +7,5 @@ parent: Concepts
 
 # {{ page.title }}
 
-## This page is a stub
-
-TBD
+Coming soon
+{: .label .label-yellow }

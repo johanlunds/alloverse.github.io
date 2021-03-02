@@ -6,7 +6,11 @@
 */
 
 $allo-light-yellow: #fff7e9;
+$allo-darker-yellow: darken($allo-light-yellow, 10%);
+
 $allo-light-green: #cbebe1;
+$allo-text-color-light: #4a4a4a;
+$allo-text-color-dark: #3a3a3a;
 
 //$body-background-color: $allo-light-yellow;
 $sidebar-color: $allo-light-yellow;
@@ -14,9 +18,11 @@ $sidebar-color: $allo-light-yellow;
 $link-color: $blue-200;
 $nav-child-link-color: $blue-200;
 
-/* Hack to change the selection color which isn't immediately available */
+$sidebar-color: $allo-light-yellow;
 
-*::selection {
-  background-color: $allo-light-green !important;
-  color: $grey-dk-200 !important;
-}
+$link-color: $blue-200;
+$nav-child-link-color: $blue-200;
+
+$body-text-color: $allo-text-color-light;
+$body-heading-color: $allo-text-color-dark;
+$code-background-color: $allo-text-color-light;
