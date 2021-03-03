@@ -23,7 +23,7 @@ email: info@alloverse.com
 description: >- # this means to ignore newlines until "baseurl:"
   Getting started with Alloverse. Guides, code snippets, API references...
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://docs.alloverse.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alloverse
 github_username: alloverse
 markdown: kramdown
