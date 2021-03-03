@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Classes
-nav_order: 5
+title: Community
+permalink: /community
+nav_order: 8
 has_children: true
 ---
 
