@@ -77,7 +77,7 @@ A component describes an aspect of an entity, such as:
 - etc...
 
 Alloverse defines **a set of [official component
-specifications](components.md)**. App developers are free
+specifications](official-components)**. App developers are free
 to invent their own components, which is useful for
 app-to-app communication (though a standard Visor will
 not be able to interpret them).
@@ -95,7 +95,7 @@ it's relevant.
 The blob is also used to send housekeeping information
 such as acknowledging receipt of state diffs.
 
-See [intent.md](intent.md).
+See [intent](intent).
 
 ## Interaction
 
@@ -105,7 +105,7 @@ the requesting entity's agent, and handled by the receiving
 entity's agent).
 
 Alloverse defines **a set of
-[official interactions](interactions.md)**. App developers
+[official interactions](interactions)**. App developers
 are free to invent their own interactions, which is useful for
 app-to-app communication (though a standard Visor will
 not be able to interpret them).
@@ -116,7 +116,7 @@ not be able to interpret them).
 
 Agent to place per-frame message.
 
-See [intent.md](intent.md).
+See [intent](intent).
 
 ## Entity to entity interaction (request/response/pubsub)
 
@@ -230,18 +230,18 @@ rule, the following message is sent in response:
 Sent every heart-beat on the unreliable channel 0 to let agents
 know what the world looks like.
 
-See [state.md](state.md) for full format and explanation, and
+See [State Diffs](state-diffs) for full format and explanation, and
 [Entity](#entity) to understand the things the state contains.
 
 # Official components
 
-Please see the [list of official components](components.md) in
+Please see the [list of official components](official-components) in
 a separate document. These are defined by alloplace,
 and define how an agent and entity interact with a place.
 
 # Official interactions
 
-Please see the [list of official interactions](interactions.md) in
+Please see the [list of official interactions](interactions) in
 a separate document. These are defined by alloplace,
 and define how an agent and entity interact with a place.
 
