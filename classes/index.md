@@ -3,7 +3,7 @@ layout: default
 title: Classes
 nav_order: 5
 has_children: true
-allo_category: test
+sidebar_header: AlloUI
 ---
 
 # {{ page.title }}

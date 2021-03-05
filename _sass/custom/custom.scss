@@ -71,6 +71,17 @@ code {
   padding: 4px;
 }
 
+.nav-list-header {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+}
+
 /* Sets the selection background color */
 *::selection {
   background-color: $allo-light-green;
